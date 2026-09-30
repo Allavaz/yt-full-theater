@@ -1,0 +1,26 @@
+/* Only active in theater mode on a watch page, and only while the extension is enabled */
+
+/* Hide the YouTube top bar and remove the space reserved for it */
+html.ytft-on:has(ytd-watch-flexy[theater]:not([hidden])) #masthead-container,
+html.ytft-on:has(ytd-watch-flexy[full-bleed-player]:not([hidden])) #masthead-container {
+  display: none !important;
+}
+
+html.ytft-on:has(ytd-watch-flexy[theater]:not([hidden])) ytd-page-manager,
+html.ytft-on:has(ytd-watch-flexy[full-bleed-player]:not([hidden])) ytd-page-manager {
+  margin-top: 0 !important;
+}
+
+/* Player fills the whole viewport */
+html.ytft-on ytd-watch-flexy[theater] #full-bleed-container,
+html.ytft-on ytd-watch-flexy[full-bleed-player] #full-bleed-container {
+  height: 100vh !important;
+  max-height: none !important;
+  min-height: 0 !important;
+}
+
+html.ytft-on ytd-watch-flexy[theater] #player-full-bleed-container,
+html.ytft-on ytd-watch-flexy[full-bleed-player] #player-full-bleed-container {
+  height: 100% !important;
+  max-height: none !important;
+}

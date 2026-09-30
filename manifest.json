@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Full-Height Theater",
+  "version": "1.0",
+  "description": "Makes YouTube theater mode fill the whole viewport height, Twitch-style.",
+  "permissions": ["storage"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Toggle full-height theater" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["theater.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
